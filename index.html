@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Carona</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginUsername">Usuário</label>
+            <input type="text" id="loginUsername" placeholder="Usuário" required aria-label="Usuário">
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" placeholder="Senha" required aria-label="Senha">
+            <button type="submit">Entrar</button>
+            <button id="registerLink" type="button">Cadastrar</button>
+        </form>
+    </div>
+
+    <div class="register-container" id="register-container" style="display:none;">
+        <h2>Cadastro</h2>
+        <form id="registerForm">
+            <label for="registerUsername">Usuário</label>
+            <input type="text" id="registerUsername" placeholder="Usuário" required aria-label="Usuário">
+            <label for="registerPassword">Senha</label>
+            <input type="password" id="registerPassword" placeholder="Senha" required aria-label="Senha">
+            <button type="submit">Cadastrar</button>
+        </form>
+        
+    </div>
+
+    <div class="carona-container" id="carona-container" style="display:none;">
+        <h2>Solicitar Carona</h2>
+        <form id="caronaForm">
+            <label for="startAddress">Endereço Inicial</label>
+            <input type="text" id="startAddress" placeholder="Endereço Inicial" required aria-label="Endereço Inicial">
+            <label for="endAddress">Endereço Final</label>
+            <input type="text" id="endAddress" placeholder="Endereço Final" required aria-label="Endereço Final">
+            <label for="date">Data</label>
+            <input type="date" id="date" required aria-label="Data">
+            <label for="time">Hora</label>
+            <input type="time" id="time" required aria-label="Hora">
+            <button type="submit">Solicitar Carona</button>
+            <button id="cancelarCorridaButton" type="button">Cancelar</button>
+        </form>
+    </div>
+
+    <div class="historico-corridas-container" id="historico-corridas-container" style="display: none;">
+        <h2>Histórico de Corridas</h2>
+        <table id="historicoTable">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Partida</th>
+                    <th>Destino</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="historicoList">
+                <!-- Os itens serão inseridos aqui -->
+            </tbody>
+        </table>
+        <button id="novaCorridaButtonHistorico" type="button">Solicitar Nova Corrida</button>
+        <button id="voltarDashboardButton" type="button">Voltar para o Dashboard</button>
+    </div>
+
+    <div class="dashboard-container" id="dashboard-container" style="display:none;">
+        <h2>Dashboard</h2>
+        <div class="button-group">
+            <button id="novaCorridaButtonDashboard" type="button">Solicitar Nova Corrida</button>
+            <button id="historicoButton" type="button">Ver Histórico de Corridas</button>
+            <button id="acompanhamentoButton" type="button">Acompanhar Corrida Atual</button>
+            <button id="sairButton" type="button">Sair</button>
+        </div>
+    </div>
+
+    <div id="map-container" style="display: none;">
+        <h2>Acompanhamento de Corrida</h2>
+        <div id="map" style="width: 100%; height: 400px;"></div>
+        <button id="voltarAcompanhamentoButton" type="button">Voltar</button>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

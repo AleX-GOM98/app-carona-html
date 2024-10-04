@@ -1,0 +1,112 @@
+/* Aplica a todas as telas para preencher toda a viewport */
+html, body {
+   margin: 0;
+   padding: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #f4f4f4;
+   font-family: Arial, sans-serif;
+}
+
+/* Estilos para todas as seções */
+.login-container, .register-container, .carona-container, .historico-corridas-container, .dashboard-container {
+   width: 100vw;
+   max-width: 400px;
+   height: 100vh;
+   max-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px; /* Adiciona espaço ao redor do conteúdo */
+   box-sizing: border-box;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+   color: #333;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+form {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   max-width: 340px; /* Define a largura máxima para centralizar */
+}
+
+input {
+   padding: 10px;
+   width: 100%;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
+}
+
+button {
+   padding: 10px;
+   background-color: #28a745;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   width: 100%;
+}
+
+button:hover {
+   background-color: #218838;
+}
+
+/* Estilo específico para o dashboard */
+.dashboard-container .button-group {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   align-items: center;
+   max-width: 340px; /* Limita largura no dashboard também */
+}
+
+.dashboard-container .button-group button {
+   background-color: #28a745;
+   color: white;
+   padding: 10px 20px;
+   border-radius: 5px;
+   transition: background-color 0.3s;
+   width: 100%;
+}
+
+.dashboard-container .button-group button:hover {
+   background-color: #218838;
+}
+
+#historicoTable {
+   width: 100%; /* Largura total */
+   border-collapse: collapse; /* Para que as bordas da tabela sejam colapsadas */
+   margin-top: 20px; /* Espaçamento superior */
+}
+
+#historicoTable th, #historicoTable td {
+   border: 1px solid #ddd; /* Borda para as células */
+   padding: 8px; /* Espaçamento interno */
+   text-align: left; /* Alinhamento à esquerda */
+}
+
+#historicoTable th {
+   background-color: #f2f2f2; /* Cor de fundo para cabeçalho */
+}
+
+#historicoTable tr:nth-child(even) {
+   background-color: #f9f9f9; /* Cor de fundo para linhas pares */
+}
+
+#historicoTable tr:hover {
+   background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+}
